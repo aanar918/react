@@ -11,8 +11,22 @@ const Header = () => (
     </header>
 )
 
+const Player = () => {
+    return(
+        <div className="player">
+            <span className='player-name'>Player</span>
+            <div className="counter">
+                <div className="counter-action increment">+</div>
+                <div className="counter-score">100</div>
+                <div className="counter-action decrement">-</div>
+            </div>
+        </div>
+    )
+}
+
 ReactDOM.render(
-    <Header/>,
+    // <Header/>,
+    <Player/>,
     document.getElementById('root')
 )
 
