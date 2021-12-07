@@ -1,21 +1,15 @@
-const title = 'My first react element by babel';
-const description = 'Babel P element';
+const userName = 'User Name';
+const description = 'My description';
+const title = 'My title';
+const titleId = 'my-title';
 
-const header = (
+const Header = () => (
     <header>
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <h1>Score Board</h1>
+        <p id={titleId}>{userName}'s first react app!</p>
+        <span className="stats">{title}</span>
     </header>
 )
-
-function Header() {
-    return(
-        <header>
-            <h1>Score Board</h1>
-            <span className="stats">Player: 1</span>
-        </header>
-    )
-}
 
 ReactDOM.render(
     <Header/>,
