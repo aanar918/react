@@ -26,7 +26,7 @@ const Counter = () => {
             <div className="counter-action decrement">-</div>
         </div>
     )
-}
+};
 
 const App = () => {
     return(
