@@ -1,32 +1,44 @@
-const userName = 'User Name';
-const description = 'My description';
-const title = 'My title';
-const titleId = 'my-title';
+const userName = 'Anar';
 
-const Header = () => (
-    <header>
-        <h1>Score Board</h1>
-        <p id={titleId}>{userName}'s first react app!</p>
-        <span className="stats">{title}</span>
-    </header>
-)
+const Header = () => {
+    return(
+        <header>
+            <h1>Score Board</h1>
+            <span className="stats">Player: 1</span>
+        </header>
+    )
+};
 
 const Player = () => {
     return(
         <div className="player">
-            <span className='player-name'>Player</span>
-            <div className="counter">
-                <div className="counter-action increment">+</div>
-                <div className="counter-score">100</div>
-                <div className="counter-action decrement">-</div>
-            </div>
+            <span className='player-name'>{userName}</span>
+            <Counter/>
+        </div>
+    )
+};
+
+const Counter = () => {
+    return(
+        <div className="counter">
+            <div className="counter-action increment">+</div>
+            <div className="counter-score">100</div>
+            <div className="counter-action decrement">-</div>
         </div>
     )
 }
 
+const App = () => {
+    return(
+        <div className="scoreboard">
+            <Header/>
+            <Player/>
+        </div>
+    )
+};
+
 ReactDOM.render(
-    // <Header/>,
-    <Player/>,
+    <App/>,
     document.getElementById('root')
-)
+);
 
