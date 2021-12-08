@@ -1,7 +1,14 @@
-const userName = 'Anar';
+const Player = () => {
+    return (
+        <div className="player">
+            <span className="player-name">Player</span>
+            <Counter />
+        </div>
+    )
+};
 
 const Header = () => {
-    return(
+    return (
         <header>
             <h1>Score Board</h1>
             <span className="stats">Player: 1</span>
@@ -9,36 +16,26 @@ const Header = () => {
     )
 };
 
-const Player = () => {
-    return(
-        <div className="player">
-            <span className='player-name'>{userName}</span>
-            <Counter/>
-        </div>
-    )
-};
-
 const Counter = () => {
-    return(
+    return (
         <div className="counter">
-            <div className="counter-action increment">+</div>
+            <button className="counter-action decrement">-</button>
             <div className="counter-score">100</div>
-            <div className="counter-action decrement">-</div>
+            <button className="counter-action increment">+</button>
         </div>
     )
 };
 
 const App = () => {
-    return(
+    return (
         <div className="scoreboard">
-            <Header/>
-            <Player/>
+            <Header />
+            <Player />
         </div>
     )
 };
 
 ReactDOM.render(
-    <App/>,
+    <App />,
     document.getElementById('root')
 );
-
