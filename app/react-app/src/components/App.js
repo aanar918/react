@@ -35,11 +35,18 @@ class App extends React.Component {
     }
 
     handleScoreChange = (index, num) => {
-        this.setState(previousState => ({
-            score: previousState.players[index].score += num
-        }));
-        if (num > 0) console.log(index, '+');
-        else console.log(index, '-');
+        this.setState(previousState => {
+            const updatedPlayers = [...previousState.players];
+            const updatedPlayer = {...updatedPlayers[index]};
+            updatedPlayer.score += num;
+            updatedPlayers[index] = updatedPlayer;
+            previousState.players[index].score += num;
+            return {
+                players: updatedPlayers
+            };
+        });
+        // if (num > 0) console.log('Player: '+ (index + 1), '+');
+        // else console.log('Player: '+ (index + 1), '-');
     }
 
     handleRemovePlayer = (playerId) => {
@@ -47,16 +54,17 @@ class App extends React.Component {
             players: prevState.players.filter(tmp => tmp.id !== playerId)
         }))
     }
-    // addRemovePlayer = (playerId) => {
-    //     let obj = {
-    //         name: 'Player',
-    //         score: 0,
-    //         id: 1
-    //     };
-    //     this.setState(prevState => ({
-    //         players: prevState.players.push(obj)
-    //     }))
-    // }
+    
+    addPlayer = () => {
+        let obj = {
+            name: 'Player',
+            score: 0,
+            id: 1
+        };
+        this.setState(prevState => ({
+            players: prevState.players.push(obj)
+        }))
+    }
 
     render() {
         return (
