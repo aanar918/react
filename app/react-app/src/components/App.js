@@ -35,7 +35,7 @@ class App extends React.Component {
             },
         ]
     }
-    
+
     handleScoreChange = (index, num) => {
         this.setState(previousState => {
             const updatedPlayers = [...previousState.players];
@@ -47,8 +47,8 @@ class App extends React.Component {
                 players: updatedPlayers
             };
         });
-        if (num > 0) console.log('Player: '+ (index + 1), '+');
-        else console.log('Player: '+ (index + 1), '-');
+        if (num > 0) console.log('Player: ' + (index + 1), '+');
+        else console.log('Player: ' + (index + 1), '-');
     }
 
     handleRemovePlayer = (playerId) => {
@@ -64,7 +64,7 @@ class App extends React.Component {
                 {
                     name: name,
                     score: 0,
-                    id: id                
+                    id: id
                 }
             ]
         })
@@ -83,7 +83,7 @@ class App extends React.Component {
                     headerName='Score Board'
                     totalPlayers={this.state.players.length}
                 />
-                
+
                 {this.state.players.map((player, index) =>
                     <Player
                         players={this.players}
@@ -96,10 +96,10 @@ class App extends React.Component {
                         changeScore={this.handleScoreChange}
                     />
                 )}
-                
-                <AddPlayer 
-                    addPlayer = {this.handleAddPlayer}
-                    newId = {newId}
+
+                <AddPlayer
+                    addPlayer={this.handleAddPlayer}
+                    newId={newId}
                 />
             </div>
         );
