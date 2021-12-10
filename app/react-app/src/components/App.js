@@ -36,12 +36,6 @@ class App extends React.Component {
         ]
     }
     
-    lastId = 5
-
-    // const len = this.state.players.length
-    // const lastId = this.state.players[len - 1].id;
-    // console.log(lastId)
-    
     handleScoreChange = (index, num) => {
         this.setState(previousState => {
             const updatedPlayers = [...previousState.players];
@@ -63,20 +57,25 @@ class App extends React.Component {
         }))
     }
 
-    handleAddPlayer = (name) => {
+    handleAddPlayer = (name, id) => {
         this.setState({
             players: [
                 ...this.state.players,
                 {
                     name: name,
                     score: 0,
-                    id: this.lastId += 1                
+                    id: id                
                 }
             ]
         })
     }
 
     render() {
+
+        const len = this.state.players.length
+        const lastId = this.state.players[len - 1].id;
+        const newId = lastId + 1;
+
         return (
             <div className="scoreboard">
                 <Header
@@ -98,7 +97,10 @@ class App extends React.Component {
                     />
                 )}
                 
-                <AddPlayer addPlayer = {this.handleAddPlayer}/>
+                <AddPlayer 
+                    addPlayer = {this.handleAddPlayer}
+                    newId = {newId}
+                />
             </div>
         );
     }

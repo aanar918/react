@@ -3,9 +3,11 @@ import React from "react";
 class Stats extends React.Component {
     render() {
         const totalPlayers = this.props.players.length;
+        
         const totalScore = this.props.players.reduce((total, player) => {
             return total + player.score;
         }, 0);
+        
         const highScore = this.props.players.reduce((max, player) => {
             if(max < player.score) {
                 max = player.score;

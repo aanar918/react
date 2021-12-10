@@ -10,15 +10,20 @@ class AddPlayer extends React.Component {
         this.setState({
             value: e.target.value
         })
-        // console.log(e.target.value)
+        console.log(e.target.value)
     }    
     
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addPlayer(this.state.value)
+        this.props.addPlayer(this.state.value, this.props.newId)
     }    
-
+    
     render() {
+        
+        // if(this.state.value === '') {
+        //     this.state.value = 'Unknown Player'  
+        // } 
+
         return(
             <form onSubmit={this.handleSubmit}>
                 <input 
