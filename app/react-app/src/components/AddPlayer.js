@@ -15,9 +15,9 @@ class AddPlayer extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        if(this.state.value === '') {
-            this.state.value = 'Unknown Player'  
-        } 
+        if (this.state.value === '') {
+            this.state.value = 'Unknown Player'
+        }
         this.props.addPlayer(this.state.value, this.props.newId);
         this.setState({
             value: ''
@@ -39,6 +39,7 @@ class AddPlayer extends React.Component {
                 <input
                     type='submit'
                 >
+                    
                 </input>
             </form>
         )

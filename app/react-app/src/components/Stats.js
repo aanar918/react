@@ -2,35 +2,20 @@ import React from "react";
 
 class Stats extends React.Component {
     render() {
-        const totalPlayers = this.props.players.length;
-
-        const totalScore = this.props.players.reduce((total, player) => {
-            return total + player.score;
-        }, 0);
-
-        const highScore = this.props.players.reduce((max, player) => {
-            if (max < player.score) {
-                max = player.score;
-            }
-            return max;
-        }, -999999999);
+        const totalScore = this.props.stats[0];
+        const highScore = this.props.stats[1];
+        const minScore = this.props.stats[2];
+        const totalPlayers = this.props.stats[3];
         
-        const minScore = this.props.players.reduce((min, player) => {
-            if (min > player.score) {
-                min = player.score;
-            }
-            return min;
-        }, 999999999);
-
-        // let scores = () => {
-        //     let tmp = [];
-        //     this.props.players.map(player => tmp.push(player.score));
-        //     return tmp;
-        // };
-        // const highScore = Math.max(...scores);
-
-        return (
-            <table className="stats">
+            // let scores = () => {
+            //     let tmp = [];
+            //     this.props.players.map(player => tmp.push(player.score));
+            //     return tmp;
+            // };
+            // const highScore = Math.max(...scores);
+            
+            return (
+                <table className="stats">
                 <tbody>
                     <tr>
                         <td>Total Players</td>

@@ -71,13 +71,43 @@ class App extends React.Component {
 
     render() {
 
-        const len = this.state.players.length
-        const lastId = this.state.players[len - 1].id;
-        const newId = lastId + 1;
+        const playersLen = this.state.players.length
+        
+        const lastPlayerId = this.state.players[playersLen - 1].id;
+        const newId = lastPlayerId + 1;
+
+        const totalScore = this.state.players.reduce((total, player) => {
+            return total + player.score;
+        }, 0);
+
+        const highScore = this.state.players.reduce((max, player) => {
+            if (max < player.score) {
+                max = player.score;
+            }
+            return max;
+        }, -999999999);
+        
+        
+        const minScore = this.state.players.reduce((min, player) => {
+            if (min > player.score) {
+                min = player.score;
+            }
+            return min;
+        }, 999999999);
+        
+        let isZero = true;
+        for(let i = 0; i < playersLen; i++) {
+            if(this.state.players[i].score !== 0)
+                isZero = false;
+        }
+        console.log(isZero)
+
+        const stats = [totalScore, highScore, minScore , playersLen];
 
         return (
             <div className="scoreboard">
                 <Header
+                    stats = {stats}
                     players={this.state.players}
                     headerName='Score Board'
                     totalPlayers={this.state.players.length}
@@ -85,8 +115,11 @@ class App extends React.Component {
 
                 {this.state.players.map((player, index) =>
                     <Player
+                        playersList={this.state.players}
                         players={this.players}
                         playerName={`${player.name}-${player.id}`}
+                        highScore={highScore}
+                        equal = {isZero}
                         playerScore={player.score}
                         key={player.id}
                         playerId={player.id}
