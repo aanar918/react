@@ -14,6 +14,13 @@ class Stats extends React.Component {
             }
             return max;
         }, -999999999);
+        
+        const minScore = this.props.players.reduce((min, player) => {
+            if (min > player.score) {
+                min = player.score;
+            }
+            return min;
+        }, 999999999);
 
         // let scores = () => {
         //     let tmp = [];
@@ -34,8 +41,12 @@ class Stats extends React.Component {
                         <td>{totalScore}</td>
                     </tr>
                     <tr className='is-high-score'>
-                        <td>High Score</td>
+                        <td>Highest Score</td>
                         <td>{highScore}</td>
+                    </tr>
+                    <tr>
+                        <td>Lowest Score</td>
+                        <td>{minScore}</td>
                     </tr>
                 </tbody>
             </table>

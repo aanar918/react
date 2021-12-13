@@ -1,5 +1,4 @@
 import React from "react"
-// import AddPlayer from "./AddPlayer"
 import Header from './Header'
 import Player from './Player'
 import AddPlayer from "./AddPlayer"
@@ -58,7 +57,7 @@ class App extends React.Component {
     }
 
     handleAddPlayer = (name, id) => {
-        this.setState({
+    this.setState({
             players: [
                 ...this.state.players,
                 {

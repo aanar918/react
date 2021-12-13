@@ -5,7 +5,7 @@ class Player extends React.Component {
     render() {
         return (
             <div className='player'>
-                <button className="remove-player" onClick={() => this.props.removePlayer(this.props.playerId)} >X</button>
+                <button className="remove-player" type="submit" onClick={() => this.props.removePlayer(this.props.playerId)} >X</button>
                 <span className="player-name">{this.props.playerName}</span>
                 <Counter
                     index={this.props.index}
