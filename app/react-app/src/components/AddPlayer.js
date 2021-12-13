@@ -19,7 +19,10 @@ class AddPlayer extends React.Component {
             this.state.value = 'Unknown Player'  
         } 
         this.props.addPlayer(this.state.value, this.props.newId);
-        this.state.value = '';
+        this.setState({
+            value: ''
+        })
+        // this.state.value = '';
     }
 
     render() {
