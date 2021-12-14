@@ -7,7 +7,7 @@ class Icon extends React.Component {
 
     render() {
 
-        let playerStatus = (this.props.winner && !this.props.equal) ? 'is-high-score' : null;
+        let playerStatus;
 
         if(this.props.winner && !this.props.equal) {
             playerStatus = 'is-high-score';
