@@ -9,7 +9,7 @@ class Header extends React.Component {
             <header>
                 <Stats
                     players={this.props.players}
-                    stats = {this.props.stats}
+                    stats={this.props.stats}
                 />
                 <h1>{this.props.headerName}</h1>
                 <span className="stats">Total Players: {this.props.totalPlayers}</span>

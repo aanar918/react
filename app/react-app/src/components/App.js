@@ -57,7 +57,7 @@ class App extends React.Component {
     }
 
     handleAddPlayer = (name, id) => {
-    this.setState({
+        this.setState({
             players: [
                 ...this.state.players,
                 {
@@ -72,7 +72,7 @@ class App extends React.Component {
     render() {
 
         const playersLen = this.state.players.length
-        
+
         const lastPlayerId = this.state.players[playersLen - 1].id;
         const newId = lastPlayerId + 1;
 
@@ -86,28 +86,28 @@ class App extends React.Component {
             }
             return max;
         }, -999999999);
-        
-        
+
+
         const minScore = this.state.players.reduce((min, player) => {
             if (min > player.score) {
                 min = player.score;
             }
             return min;
         }, 999999999);
-        
+
         let isZero = true;
-        for(let i = 0; i < playersLen; i++) {
-            if(this.state.players[i].score !== 0)
+        for (let i = 0; i < playersLen; i++) {
+            if (this.state.players[i].score !== 0)
                 isZero = false;
         }
         // console.log(isZero)
 
-        const stats = [totalScore, highScore, minScore , playersLen];
+        const stats = [totalScore, highScore, minScore, playersLen];
 
         return (
             <div className="scoreboard">
                 <Header
-                    stats = {stats}
+                    stats={stats}
                     players={this.state.players}
                     headerName='Score Board'
                     totalPlayers={this.state.players.length}
@@ -119,7 +119,7 @@ class App extends React.Component {
                         players={this.players}
                         playerName={`${player.name}-${player.id}`}
                         highScore={highScore}
-                        equal = {isZero}
+                        equal={isZero}
                         playerScore={player.score}
                         key={player.id}
                         playerId={player.id}

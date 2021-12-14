@@ -14,7 +14,7 @@ class StopWatch extends Component {
             isRunning: !prev.isRunning
         }));
         if (!this.state.isRunning) {
-            this.setState({ 
+            this.setState({
                 previousTime: Date.now()
             })
         };
@@ -31,7 +31,7 @@ class StopWatch extends Component {
 
     tick = () => {
         const now = Date.now();
-        if(this.state.isRunning){
+        if (this.state.isRunning) {
             this.setState(prev => ({
                 previousTime: now,
                 timer: ++this.state.timer,

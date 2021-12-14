@@ -36,11 +36,7 @@ class AddPlayer extends React.Component {
                     placeholder='Type your name'>
                 </input>
 
-                <input
-                    type='submit'
-                >
-                    
-                </input>
+                <input type='submit' value='Join'></input>
             </form>
         )
     }

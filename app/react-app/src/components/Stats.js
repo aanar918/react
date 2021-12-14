@@ -6,16 +6,16 @@ class Stats extends React.Component {
         const highScore = this.props.stats[1];
         const minScore = this.props.stats[2];
         const totalPlayers = this.props.stats[3];
-        
-            // let scores = () => {
-            //     let tmp = [];
-            //     this.props.players.map(player => tmp.push(player.score));
-            //     return tmp;
-            // };
-            // const highScore = Math.max(...scores);
-            
-            return (
-                <table className="stats">
+
+        // let scores = () => {
+        //     let tmp = [];
+        //     this.props.players.map(player => tmp.push(player.score));
+        //     return tmp;
+        // };
+        // const highScore = Math.max(...scores);
+
+        return (
+            <table className="stats">
                 <tbody>
                     <tr>
                         <td>Total Players</td>

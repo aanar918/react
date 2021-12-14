@@ -1,4 +1,4 @@
-import React, {PureComponent} from "react"
+import React, { PureComponent } from "react"
 import Counter from './Counter'
 import Icon from "./Icon"
 
@@ -13,16 +13,16 @@ class Player extends PureComponent {
         return (
             <div className='player'>
                 <span className="player-name">
-                    <button 
-                        className="remove-player" 
-                        type="submit" onClick={() => this.props.removePlayer(this.props.playerId)} 
+                    <button
+                        className="remove-player"
+                        type="submit" onClick={() => this.props.removePlayer(this.props.playerId)}
                     >
                         X
                     </button>
                     {/* Name */}
                     <Icon
-                        equal = {this.props.equal}
-                        winner = {isWinner}
+                        equal={this.props.equal}
+                        winner={isWinner}
                     />
                     {this.props.playerName}
                 </span>
