@@ -100,7 +100,7 @@ class App extends React.Component {
             if(this.state.players[i].score !== 0)
                 isZero = false;
         }
-        console.log(isZero)
+        // console.log(isZero)
 
         const stats = [totalScore, highScore, minScore , playersLen];
 
