@@ -7,8 +7,14 @@ class Player extends PureComponent {
     render() {
 
         const currentPlayerScore = this.props.playerScore;
+        
         const highScore = this.props.highScore;
+        const silver = this.props.silver;
+        const bronze = this.props.bronze;
+
         const isWinner = currentPlayerScore === highScore ? true : false;
+        const isSecond = currentPlayerScore === silver ? true : false;
+        const isThird = currentPlayerScore === bronze ? true : false;
 
         return (
             <div className='player'>
@@ -23,6 +29,8 @@ class Player extends PureComponent {
                     <Icon
                         equal={this.props.equal}
                         winner={isWinner}
+                        silver={isSecond}
+                        bronze={isThird}
                     />
                     {this.props.playerName}
                 </span>

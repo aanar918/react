@@ -86,6 +86,20 @@ class App extends React.Component {
             }
             return max;
         }, -999999999);
+        
+        const silver = this.state.players.reduce((max, player) => {
+            if (max < player.score && player.score !== highScore) {
+                max = player.score;
+            }
+            return max;
+        }, -999999999);
+        
+        const bronze = this.state.players.reduce((max, player) => {
+            if (max < player.score && player.score !== highScore && player.score !== silver) {
+                max = player.score;
+            }
+            return max;
+        }, -999999999);
 
 
         const minScore = this.state.players.reduce((min, player) => {
@@ -119,6 +133,8 @@ class App extends React.Component {
                         players={this.players}
                         playerName={`${player.name}-${player.id}`}
                         highScore={highScore}
+                        silver={silver}
+                        bronze={bronze}
                         equal={isZero}
                         playerScore={player.score}
                         key={player.id}

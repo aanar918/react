@@ -2,9 +2,20 @@ import React from "react"
 
 class Icon extends React.Component {
 
+    // is-second
+    // is-third
+
     render() {
 
-        const playerStatus = (this.props.winner && !this.props.equal) ? 'is-high-score' : null;
+        let playerStatus = (this.props.winner && !this.props.equal) ? 'is-high-score' : null;
+
+        if(this.props.winner && !this.props.equal) {
+            playerStatus = 'is-high-score';
+        } else if(this.props.silver && !this.props.equal) {
+            playerStatus = 'is-second';
+        } else if(this.props.bronze && !this.props.equal) {
+            playerStatus = 'is-third';
+        } else playerStatus = null;
 
         return (
             <svg className={playerStatus} viewBox="0 0 44 35">
