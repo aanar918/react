@@ -25,7 +25,6 @@ class Player extends PureComponent {
                     >
                         X
                     </button>
-                    {/* Name */}
                     <Icon
                         equal={this.props.equal}
                         winner={isWinner}
